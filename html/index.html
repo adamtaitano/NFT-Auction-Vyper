@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+  <head>
+    <title>NFT Open Auction</title>
+    <link rel=stylesheet type="text/css" href="style.css">
+  </head>
+  <body>
+    <div class=page>
+    <h2>Limited Time Auction</h2>
+    <h3>Time Remaining: <span id="countdown"><span id="minutes"></span><span id="seconds"></span><span id="remaining"></span></span></h3>
+    <h3>Place Your Bid for a One-of-a-Kind NFT!</h2>
+      <div>Current Highest Bid: <span id="highestBid"></span></div>
+      <br>
+      <div>Your Account: <span id="account"></span></div>
+      <div></div>
+      <br>
+      <div>
+	  <div>Notice: the next bid must exceed the current bid by 0.005 ETH</div>
+          <div>
+            <label for="bid">Amount: </label>
+	    <input type="number" id="bid" name ="bid" step="5000000000000000">
+	    <br>
+            <label for="name">Name: </label>
+            <input id='name' type='text' name='name'>
+            <button id="sign">Place Bid</button>
+          </div>
+	  <br>
+          <button id="prize">Claim Prize</button>
+	  <br>
+          <button id="withdraw">Withdraw Bid</button>
+      </div>
+    <h2>Bidding History</h2>
+      <div id="entries"></div>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+    <script type="text/javascript" src="auction.js"></script>
+    <script type="text/javascript">
+      updateBid();
+      updateAccount();
+      updateEntries();
+      updateCountdown();
+    </script>
+    </div>
+  </body>
+</html>
